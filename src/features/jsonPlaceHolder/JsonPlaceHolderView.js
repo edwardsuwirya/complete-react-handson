@@ -1,7 +1,8 @@
 import JsonPlaceHolderContent from "./components/JsonPlaceHolderContent";
+import useJsonPlaceHolderController from "./useJsonPlaceHolderController";
 
-const JsonPlaceHolderView = ({controller}) => {
-    const {viewState, onCreatePost} = controller();
+const JsonPlaceHolderView = () => {
+    const {viewState, onCreatePost} = useJsonPlaceHolderController();
     return <JsonPlaceHolderContent state={viewState} onCreatePost={onCreatePost}/>;
 }
 

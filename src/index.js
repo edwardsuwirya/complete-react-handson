@@ -7,6 +7,7 @@ import ApiClientFactory from "./shared/apiClientFactory";
 import clientInstance from "./shared/axiosClient";
 import {AuthProvider} from "./shared/hook/useAuth";
 import loginService from "./services/loginService";
+import jsonPlaceHolderService from "./services/jsonPlaceHolderService";
 
 //create .env file in the root of the project
 //set environment variables starting with REACT_APP_
@@ -17,7 +18,7 @@ root.render(
         <DepsProvider
             apiClient={() => ApiClientFactory(clientInstance)}
             services={{
-                loginService
+                loginService, jsonPlaceHolderService
             }}
         >
             <AuthProvider>
