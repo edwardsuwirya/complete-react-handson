@@ -1,6 +1,6 @@
 import {useDeps} from "../../shared/depContext";
 import {useEffect} from "react";
-import useViewState from "../../shared/useViewState";
+import useViewState from "../../shared/hook/useViewState";
 
 const JsonPlaceHolderController = () => {
     const {apiClient} = useDeps();

@@ -5,6 +5,8 @@ import App from './App';
 import {DepsProvider} from "./shared/depContext";
 import ApiClientFactory from "./shared/apiClientFactory";
 import clientInstance from "./shared/axiosClient";
+import {AuthProvider} from "./shared/hook/useAuth";
+import loginService from "./services/loginService";
 
 //create .env file in the root of the project
 //set environment variables starting with REACT_APP_
@@ -12,8 +14,15 @@ import clientInstance from "./shared/axiosClient";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <DepsProvider apiClient={() => ApiClientFactory(clientInstance)}>
-            <App/>
+        <DepsProvider
+            apiClient={() => ApiClientFactory(clientInstance)}
+            services={{
+                loginService
+            }}
+        >
+            <AuthProvider>
+                <App/>
+            </AuthProvider>
         </DepsProvider>
     </React.StrictMode>
 );

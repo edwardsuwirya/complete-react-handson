@@ -1,9 +1,13 @@
-const withViewState = (Component) => ({state, ...props}) => {
-    if (state.isLoading) return <div>Loading data.</div>;
-    if (state.error) return <div>Error</div>;
-    if (!state.data) return <div>Data is empty.</div>;
+import LoadingBackDrop from "./loadingBackDrop/LoadingBackDrop";
 
-    return <Component data={state.data} {...props} />;
+const withViewState = (Component) => ({state, ...props}) => {
+    return (
+        <>
+            {state.isLoading && <LoadingBackDrop title={'Please Wait'}/>}
+            <Component state={state} {...props} />
+            {state.error && <div>{state.error}</div>}
+        </>
+    )
 };
 
 export default withViewState;
