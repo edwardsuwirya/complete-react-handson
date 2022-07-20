@@ -1,11 +1,14 @@
 import {useDeps} from "../../shared/depContext";
 import {useEffect} from "react";
 import useViewState from "../../shared/hook/useViewState";
+import {useDispatch} from "react-redux";
+import {addPost} from "./state/jsonPlaceHolderSlice";
 
 const useJsonPlaceHolderController = () => {
     const {apiClient, services} = useDeps();
     const {getPostById, createPost} = services.jsonPlaceHolderService(apiClient());
     const [viewState, setLoading, setData, setError] = useViewState();
+    const dispatch = useDispatch();
     useEffect(() => {
         onGetPost();
     }, []);
@@ -22,8 +25,11 @@ const useJsonPlaceHolderController = () => {
     const onCreatePost = async () => {
         setLoading();
         try {
-            const response = await createPost("Hello World!", "This is a new post.")
+            const title = 'Hello World';
+            const body = 'This is a new post.'
+            const response = await createPost(title, body)
             setData(response)
+            dispatch(addPost({title, body}));
         } catch (e) {
             setError(e)
         }
