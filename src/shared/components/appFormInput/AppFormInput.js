@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import './appFormInput.css';
 
 const AppFormInput = props => {
     const {id, label, value, onValueChange, type = 'text'} = props;
@@ -7,7 +8,7 @@ const AppFormInput = props => {
             <label htmlFor={id}>
                 {label}
             </label>
-            <input id={id} type={type} value={value} onChange={onValueChange}/>
+            <input id={id} className='input-form' type={type} value={value} onChange={onValueChange}/>
         </>
     )
 }

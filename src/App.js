@@ -1,13 +1,24 @@
 import './App.css';
-import LoginPageView from "./features/login/LoginPageView";
-import JsonPlaceHolderView from "./features/jsonPlaceHolder/JsonPlaceHolderView";
+import Navigation from "./navigation/Navigation";
+import {Outlet, useNavigate} from "react-router-dom";
 
 // npm install axios --save
 
 function App() {
+    const navigate = useNavigate();
     return (
-        <LoginPageView/>
-        // <JsonPlaceHolderView/>
+        <div className='main-container'>
+            <header className='header-container'>
+                <label onClick={() => {
+                    navigate('/main', {replace: true})
+                }}>React Hands On</label>
+            </header>
+            <Navigation/>
+            <section className='content-container'>
+                <Outlet/>
+            </section>
+            <footer className='footer-container'>Copyright@2022 EnigmaCamp-SMM Batch 2</footer>
+        </div>
     )
 }
 

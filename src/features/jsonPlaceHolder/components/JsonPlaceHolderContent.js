@@ -1,7 +1,6 @@
 import withViewState from "../../../shared/components/withViewState";
 
 const JsonPlaceHolderContent = ({state, onCreatePost}) => {
-    console.log(state)
     return (
         <div>
             {state.data ? <>

@@ -1,17 +1,18 @@
-import AppFormInput from "../../../shared/components/AppFormInput";
-import AppButton from "../../../shared/components/AppButton";
+import AppFormInput from "../../../shared/components/appFormInput/AppFormInput";
+import AppButton from "../../../shared/components/appButton/AppButton";
 import withViewState from "../../../shared/components/withViewState";
 import useLoginFormController from "./useLoginFormController";
 
-const LoginForm = ({onLogin}) => {
+const LoginForm = ({children, onLogin}) => {
     const [userName, password, onUserNameChange, onPasswordChange, onLoginBtnClick] = useLoginFormController()
     return (
-        <main className='container'>
+        <main className='form-container'>
             <AppFormInput id='userName' label='User Name' value={userName}
                           onValueChange={onUserNameChange}/>
             <AppFormInput id='password' type='password' label='Password' value={password}
                           onValueChange={onPasswordChange}/>
             <AppButton handleClick={() => onLoginBtnClick(onLogin)} label='Login'/>
+            {children}
         </main>
     );
 }

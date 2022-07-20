@@ -1,8 +1,10 @@
 import {useAuth} from "../../shared/hook/useAuth";
 import useViewState from "../../shared/hook/useViewState";
+import {useNavigate} from "react-router-dom";
 
 const useLoginPageController = () => {
     const {login} = useAuth();
+    const navigate = useNavigate();
     const [viewState, setLoading, setData, setError] = useViewState();
     const onLogin = async (userName, password) => {
         setLoading();
@@ -12,6 +14,7 @@ const useLoginPageController = () => {
             } else {
                 await login({userName, password});
                 setData('');
+                navigate("/main", {replace: true});
             }
         } catch (e) {
             setError('Invalid User Name or password ');
