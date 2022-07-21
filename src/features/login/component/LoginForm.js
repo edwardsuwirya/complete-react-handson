@@ -1,8 +1,8 @@
-import AppFormInput from "../../../shared/components/AppFormInput";
-import AppButton from "../../../shared/components/AppButton";
 import withViewState from "../../../shared/components/withViewState";
+import AppFormInput from "../../../shared/components/appFormInput/AppFormInput";
+import AppButton from "../../../shared/components/appButton/AppButton";
 
-const LoginForm = ({childeren,events,controller}) => {
+const LoginForm = ({children, events, controller}) => {
     const [userName, password, onUserNameChange, onPasswordChange] = controller();
     return (
         <main className='form-container'>

@@ -14,4 +14,4 @@ const LoginPageView = ({controller}) => {
         </div>
     );
 }
-export default withContainer('Login', LoginPageView);
+export default LoginPageView;
