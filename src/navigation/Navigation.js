@@ -5,9 +5,10 @@ import {useSelector} from "react-redux";
 import {postSelector} from "../features/jsonPlaceHolder/state/jsonPlaceHolderSelector";
 
 const Navigation = () => {
-    const {logout} = useAuth();
+    const {userInfo, logout} = useAuth();
     const posts = useSelector(postSelector);
     const navigate = useNavigate();
+    // const location = useLocation();
     return (
         <>
             <nav className='navigation-container'>
@@ -20,7 +21,9 @@ const Navigation = () => {
                     <button className='button-form button-logout' onClick={() => {
                         logout();
                         navigate("/", {replace: true});
-                    }}>Logout
+                    }}>
+                        {/*Logout {location.state}*/}
+                        Logout {userInfo}
                     </button>
                 </div>
             </nav>

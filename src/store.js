@@ -3,6 +3,6 @@ import jsonPlaceHolderReducer from './features/jsonPlaceHolder/state/jsonPlaceHo
 
 export const store = configureStore({
     reducer: {
-        jsonPlaceHolder: jsonPlaceHolderReducer
+        jsonPlaceHolder: jsonPlaceHolderReducer,
     },
 })
