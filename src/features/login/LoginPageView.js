@@ -1,16 +1,17 @@
 import "./loginPageStyle.css";
-import useLoginPageController from "./useLoginPageController";
+import useLoginFormController from "./component/useLoginFormController";
 import LoginForm from "./component/LoginForm";
 
-const LoginPageView = () => {
+const LoginPageView = ({controller}) => {
     const {
         onLogin,
         viewState
-    } = useLoginPageController();
+    } = controller();
+
     return (
         <div className='login-container'>
-            <LoginForm state={viewState} onLogin={onLogin}/>
+            <LoginForm state={viewState} controller={useLoginFormController} events={onLogin}/>
         </div>
     );
 }
-export default LoginPageView;
+export default withContainer('Login', LoginPageView);
