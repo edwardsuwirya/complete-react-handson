@@ -11,6 +11,7 @@ import App from "../App";
 import JsonPlaceHolderView from "../features/jsonPlaceHolder/JsonPlaceHolderView";
 import useLoginPageController from "../features/login/useLoginPageController";
 import useJsonPlaceHolderController from "../features/jsonPlaceHolder/useJsonPlaceHolderController";
+import JsonPlaceHolderListView from "../features/jsonPlaceHolder/JsonPlaceHolderListView";
 
 const AppRouter = () => {
     return (
@@ -28,6 +29,7 @@ const AppRouter = () => {
                             <Route path="main" element={<App/>}>
                                 <Route path="jsonplaceholder"
                                        element={<JsonPlaceHolderView controller={useJsonPlaceHolderController}/>}/>
+                                <Route path="jsonplaceholderList" element={<JsonPlaceHolderListView/>}/>
                             </Route>
                         </Route>
                         <Route
