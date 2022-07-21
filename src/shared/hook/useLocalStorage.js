@@ -8,7 +8,9 @@ export const useLocalStorage = (keyName, defaultValue) => {
             if (value) {
                 return value;
             } else {
-                window.localStorage.setItem(keyName, defaultValue);
+                if (defaultValue !== null) {
+                    window.localStorage.setItem(keyName, defaultValue);
+                }
                 return defaultValue;
             }
         } catch (err) {
@@ -16,15 +18,16 @@ export const useLocalStorage = (keyName, defaultValue) => {
         }
     });
     const setValue = (newValue) => {
-        if (newValue === null) {
-            window.localStorage.removeItem(keyName);
-            return
-        }
         try {
+            if (newValue === null) {
+                window.localStorage.removeItem(keyName);
+                return
+            }
             window.localStorage.setItem(keyName, newValue);
+            setStoredValue(newValue);
         } catch (err) {
+            throw err
         }
-        setStoredValue(newValue);
     };
     return [storedValue, setValue];
 }

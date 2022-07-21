@@ -5,10 +5,7 @@ const useLoginPageController = () => {
     const [password, setPassword] = useState('');
     const onUserNameChange = (event) => setUserName(event.target.value);
     const onPasswordChange = (event) => setPassword(event.target.value);
-    const onLoginBtnClick = (onLogin) => {
-        onLogin(userName, password)
-    }
-    return [userName, password, onUserNameChange, onPasswordChange, onLoginBtnClick]
+    return [userName, password, onUserNameChange, onPasswordChange]
 }
 
 export default useLoginPageController;
