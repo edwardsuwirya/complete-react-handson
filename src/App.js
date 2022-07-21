@@ -1,12 +1,12 @@
 import './App.css';
 import JsonPlaceHolderView from "./features/jsonPlaceHolder/JsonPlaceHolderView";
-import JsonPlaceHolderController from "./features/jsonPlaceHolder/JsonPlaceHolderController";
+import useJsonPlaceHolderController from "./features/jsonPlaceHolder/useJsonPlaceHolderController";
 
 // npm install axios --save
 
 function App() {
     return (
-        <JsonPlaceHolderView controller={JsonPlaceHolderController}/>
+        <JsonPlaceHolderView controller={useJsonPlaceHolderController}/>
     )
 }
 
