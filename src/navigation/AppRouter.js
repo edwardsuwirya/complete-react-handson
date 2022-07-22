@@ -15,32 +15,25 @@ import useJsonPlaceHolderController from "../features/jsonPlaceHolder/useJsonPla
 const AppRouter = () => {
     return (
         <BrowserRouter>
-            <DepsProvider
-                apiClient={() => ApiClientFactory(clientInstance)}
-                services={{
-                    loginService, jsonPlaceHolderService
-                }}
-            >
-                <AuthProvider>
-                    <Routes>
-                        <Route index element={<LoginPageView controller={useLoginPageController}/>}/>
-                        <Route element={<ProtectedRoute/>}>
-                            <Route path="main" element={<App/>}>
-                                <Route path="jsonplaceholder"
-                                       element={<JsonPlaceHolderView controller={useJsonPlaceHolderController}/>}/>
-                            </Route>
+            <AuthProvider>
+                <Routes>
+                    <Route index element={<LoginPageView controller={useLoginPageController}/>}/>
+                    <Route element={<ProtectedRoute/>}>
+                        <Route path="main" element={<App/>}>
+                            <Route path="jsonplaceholder"
+                                   element={<JsonPlaceHolderView controller={useJsonPlaceHolderController}/>}/>
                         </Route>
-                        <Route
-                            path="*"
-                            element={
-                                <main style={{padding: "1rem"}}>
-                                    <p>Oopss... page not found</p>
-                                </main>
-                            }
-                        />
-                    </Routes>
-                </AuthProvider>
-            </DepsProvider>
+                    </Route>
+                    <Route
+                        path="*"
+                        element={
+                            <main style={{padding: "1rem"}}>
+                                <p>Oopss... page not found</p>
+                            </main>
+                        }
+                    />
+                </Routes>
+            </AuthProvider>
         </BrowserRouter>
     )
 }

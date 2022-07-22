@@ -1,13 +1,12 @@
 import withViewState from "../../../shared/components/withViewState";
 
-const JsonPlaceHolderContent = ({state, events: {createPost}}) => {
-    console.log(state)
+const JsonPlaceHolderContent = ({state, events: {onCreatePost}}) => {
     return (
         <div>
             {state.data ? <>
                 <h1>{state.data.title}</h1>
                 <p>{state.data.body}</p>
-                <button onClick={createPost}>Create Post</button>
+                <button onClick={onCreatePost}>Create Post</button>
             </> : <>Empty</>}
 
         </div>
