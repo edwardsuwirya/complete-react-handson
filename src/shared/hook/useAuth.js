@@ -7,7 +7,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
     const {apiClient, services} = useDeps();
-    const loginService = services.loginService(apiClient());
+    const loginService = services.loginService(apiClient);
     const [token, setToken] = useLocalStorage(APP_TOKEN, null);
     const [userInfo, setUserInfo] = useLocalStorage(USER_INFO, null);
     const login = async (data) => {
