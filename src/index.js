@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <DepsProvider
-            apiClient={() => ApiClientFactory(clientInstance)}
+            apiClient={ApiClientFactory(clientInstance)}
             services={{
                 loginService, jsonPlaceHolderService
             }}
