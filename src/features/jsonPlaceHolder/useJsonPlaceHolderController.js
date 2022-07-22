@@ -5,8 +5,8 @@ import {useDispatch} from "react-redux";
 import {addPost} from "./state/jsonPlaceHolderSlice";
 
 const useJsonPlaceHolderController = () => {
-    const {apiClient, services} = useDeps();
-    const {getPostById, createPost} = services.jsonPlaceHolderService(apiClient());
+    const {apiClient,services} = useDeps();
+    const {getPostById, createPost} = services.jsonPlaceHolderService(apiClient);
     const [viewState, setLoading, setData, setError] = useViewState();
     const dispatch = useDispatch();
     useEffect(() => {
