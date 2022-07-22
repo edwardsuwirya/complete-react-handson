@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
     const {apiClient, services} = useDeps();
-    const loginService = services.loginService(apiClient());
+    const loginService = services.loginService(apiClient);
     const [user, setUser] = useLocalStorage("user", null);
     const login = async (data) => {
         try {
