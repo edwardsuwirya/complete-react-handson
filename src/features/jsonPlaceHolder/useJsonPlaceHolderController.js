@@ -3,8 +3,7 @@ import {useEffect} from "react";
 import useViewState from "../../shared/hook/useViewState";
 
 const useJsonPlaceHolderController = () => {
-    const {apiClient} = useDeps();
-    const {doGet, doPost} = apiClient()
+    const {apiClient:{doGet, doPost}} = useDeps();
     const [viewState, setLoading, setData, setError] = useViewState();
     useEffect(() => {
         getPost();
