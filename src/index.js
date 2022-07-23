@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import AppRouter from "./navigation/AppRouter";
-import ApiClientFactory from "./shared/apiClientFactory";
-import clientInstance from "./shared/axiosClient";
 import {DepsProvider} from "./shared/depContext";
+import AppRouter from "./navigation/AppRouter";
 import loginService from "./services/loginService/loginService";
 import jsonPlaceHolderService from "./services/jsonPlaceHolderService/jsonPlaceHolderService";
+import ApiClientFactory from "./shared/apiClient/apiClientFactory";
+import clientInstance from "./shared/apiClient/apiClientInstanceFactory";
 
 //create .env file in the root of the project
 //set environment variables starting with REACT_APP_
