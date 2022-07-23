@@ -1,16 +1,16 @@
 import {createContext, useContext} from "react";
 import {useLocalStorage} from "./useLocalStorage";
 import {useDeps} from "../depContext";
+import useLoginService from "../../services/loginService/useLoginService";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-    const {apiClient, services} = useDeps();
-    const loginService = services.loginService(apiClient);
+    const {doAuthenticate} = useLoginService();
     const [user, setUser] = useLocalStorage("user", null);
     const login = async (data) => {
         try {
-            const response = await loginService.doAuthenticate(data.userName, data.password);
+            const response = await doAuthenticate(data.userName, data.password);
             if (response) {
                 setUser(data.userName);
             }
