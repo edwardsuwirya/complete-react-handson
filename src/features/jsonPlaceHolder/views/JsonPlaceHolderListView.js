@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {postSelector} from "./state/jsonPlaceHolderSelector";
+import {postSelector} from "../state/jsonPlaceHolderSelector";
 
 const JsonPlaceHolderListView = () => {
     const posts = useSelector(postSelector);

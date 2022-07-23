@@ -1,7 +1,7 @@
-import {useAuth} from "../../shared/hook/useAuth";
-import useViewState from "../../shared/hook/useViewState";
+import {useAuth} from "../../../shared/hook/useAuth";
+import useViewState from "../../../shared/hook/useViewState";
 import {useNavigate} from "react-router-dom";
-import {useDeps} from "../../shared/depContext";
+import {useDeps} from "../../../shared/depContext";
 
 const useLoginPageController = () => {
     const {login} = useAuth();

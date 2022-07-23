@@ -1,6 +1,6 @@
 import "./loginPageStyle.css";
-import useLoginFormController from "./component/useLoginFormController";
-import LoginForm from "./component/LoginForm";
+import useLoginFormController from "../component/useLoginFormController";
+import LoginForm from "../component/LoginForm";
 
 const LoginPageView = ({controller}) => {
     const {

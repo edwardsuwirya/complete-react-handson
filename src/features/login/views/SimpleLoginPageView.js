@@ -1,9 +1,9 @@
 import AppFormInput from "../../shared/components/AppFormInput";
 import AppButton from "../../shared/components/AppButton";
 import {useState} from "react";
-import {useDeps} from "../../shared/depContext";
-import LoadingBackDrop from "../../shared/components/loadingBackDrop/LoadingBackDrop";
-import {useLocalStorage} from "../../shared/hook/useLocalStorage";
+import {useDeps} from "../../../shared/depContext";
+import LoadingBackDrop from "../../../shared/components/loadingBackDrop/LoadingBackDrop";
+import {useLocalStorage} from "../../../shared/hook/useLocalStorage";
 
 const SimpleLoginPageView = () => {
     const {apiClient, services} = useDeps();

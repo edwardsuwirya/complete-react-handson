@@ -1,8 +1,8 @@
 import {useEffect} from "react";
-import useViewState from "../../shared/hook/useViewState";
+import useViewState from "../../../shared/hook/useViewState";
 import {useDispatch} from "react-redux";
-import useJsonPlaceHolderService from "../../services/jsonPlaceHolderService/useJsonPlaceHolderService";
-import {addPost} from "./state/jsonPlaceHolderSlice";
+import useJsonPlaceHolderService from "../../../services/jsonPlaceHolderService/useJsonPlaceHolderService";
+import {addPost} from "../state/jsonPlaceHolderSlice";
 
 const useJsonPlaceHolderController = () => {
     const {getPostById, createPost} = useJsonPlaceHolderService();

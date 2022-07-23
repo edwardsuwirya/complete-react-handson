@@ -1,12 +1,12 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {AuthProvider} from "../shared/hook/useAuth";
-import LoginPageView from "../features/login/LoginPageView";
+import LoginPageView from "../features/login/views/LoginPageView";
 import ProtectedRoute from "./ProtectedRoute";
 import App from "../App";
-import JsonPlaceHolderView from "../features/jsonPlaceHolder/JsonPlaceHolderView";
-import useLoginPageController from "../features/login/useLoginPageController";
-import useJsonPlaceHolderController from "../features/jsonPlaceHolder/useJsonPlaceHolderController";
-import JsonPlaceHolderListView from "../features/jsonPlaceHolder/JsonPlaceHolderListView";
+import JsonPlaceHolderView from "../features/jsonPlaceHolder/views/JsonPlaceHolderView";
+import useLoginPageController from "../features/login/views/useLoginPageController";
+import useJsonPlaceHolderController from "../features/jsonPlaceHolder/views/useJsonPlaceHolderController";
+import JsonPlaceHolderListView from "../features/jsonPlaceHolder/views/JsonPlaceHolderListView";
 
 const AppRouter = () => {
     return (

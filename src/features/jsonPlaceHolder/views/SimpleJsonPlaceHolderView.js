@@ -1,5 +1,5 @@
-import {useDeps} from "../../shared/depContext";
-import useViewState from "../../shared/hook/useViewState";
+import {useDeps} from "../../../shared/depContext";
+import useViewState from "../../../shared/hook/useViewState";
 import {useEffect} from "react";
 
 const SimpleJsonPlaceHolderView = () => {
