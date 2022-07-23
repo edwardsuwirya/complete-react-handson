@@ -2,7 +2,7 @@ const ApiClientFactory = (client) => {
 
     const doPost = async ({url = '', data = null}) => {
         try {
-            const response = await client({url: url, method: 'post', data: data});
+            const response = await client.post(url, data);
             return response.data;
         } catch (e) {
             if (e.response) {
@@ -17,7 +17,7 @@ const ApiClientFactory = (client) => {
     }
     const doGet = async ({url = ''}) => {
         try {
-            const response = await client({url: url, method: 'get'});
+            const response = await client.get(url);
             return response.data;
         } catch (e) {
             if (e.response) {
