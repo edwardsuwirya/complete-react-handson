@@ -1,9 +1,12 @@
 import axios from "axios";
 import {authorizationHeaderInterceptor} from "./interceptors/authorizationHeaderInterceptor";
 
-const clientInstance = axios.create({
+export const clientInstance = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL
 });
 
-clientInstance.interceptors.request.use(authorizationHeaderInterceptor, null)
-export default clientInstance;
+clientInstance.interceptors.request.use(authorizationHeaderInterceptor, null);
+
+export const jsonPlaceHolderClientInstance = axios.create({
+    baseURL: process.env.REACT_APP_JSONPLACEHOLDER_URL
+});
