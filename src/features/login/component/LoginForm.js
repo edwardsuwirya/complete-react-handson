@@ -2,7 +2,7 @@ import AppFormInput from "../../../shared/components/AppFormInput";
 import AppButton from "../../../shared/components/AppButton";
 import withViewState from "../../../shared/components/withViewState";
 
-const LoginForm = ({events, controller}) => {
+const LoginForm = ({children, events, controller}) => {
     const [userName, password, onUserNameChange, onPasswordChange] = controller();
     return (
         <main className='container'>
@@ -11,6 +11,7 @@ const LoginForm = ({events, controller}) => {
             <AppFormInput id='password' type='password' label='Password' value={password}
                           onValueChange={onPasswordChange}/>
             <AppButton handleClick={() => events(userName, password)} label='Login'/>
+            {children}
         </main>
     );
 }

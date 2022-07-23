@@ -1,6 +1,6 @@
 import withViewState from "../../../shared/components/withViewState";
 
-const JsonPlaceHolderContent = ({state, events: {onCreatePost}}) => {
+const JsonPlaceHolderContent = ({children, state, events: {onCreatePost}}) => {
     console.log(state)
     return (
         <div>
@@ -9,7 +9,7 @@ const JsonPlaceHolderContent = ({state, events: {onCreatePost}}) => {
                 <p>{state.data.body}</p>
                 <button onClick={onCreatePost}>Create Post</button>
             </> : <>Empty</>}
-
+            {children}
         </div>
     )
 }
