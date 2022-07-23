@@ -1,4 +1,4 @@
-import {APP_TOKEN} from "../constants";
+import {APP_TOKEN} from "../../constants";
 
 export const authorizationHeaderInterceptor = (config) => {
     const value = window.localStorage.getItem(APP_TOKEN);
