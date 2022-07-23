@@ -4,11 +4,11 @@ import './index.css';
 import AppRouter from "./navigation/AppRouter";
 import ApiClientFactory from "./shared/apiClientFactory";
 import clientInstance from "./shared/axiosClient";
-import loginService from "./services/loginService";
-import jsonPlaceHolderService from "./services/jsonPlaceHolderService";
 import {DepsProvider} from "./shared/depContext";
 import {Provider} from "react-redux";
 import {store} from "./store";
+import loginService from "./services/loginService/loginService";
+import jsonPlaceHolderService from "./services/jsonPlaceHolderService/jsonPlaceHolderService";
 
 //create .env file in the root of the project
 //set environment variables starting with REACT_APP_
