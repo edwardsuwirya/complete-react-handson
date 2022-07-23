@@ -1,9 +1,4 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {DepsProvider} from "../shared/depContext";
-import ApiClientFactory from "../shared/apiClientFactory";
-import clientInstance from "../shared/axiosClient";
-import loginService from "../services/loginService";
-import jsonPlaceHolderService from "../services/jsonPlaceHolderService";
 import {AuthProvider} from "../shared/hook/useAuth";
 import LoginPageView from "../features/login/LoginPageView";
 import ProtectedRoute from "./ProtectedRoute";

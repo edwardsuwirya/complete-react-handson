@@ -1,10 +1,10 @@
 import {useDeps} from "../../shared/depContext";
 import {useEffect} from "react";
 import useViewState from "../../shared/hook/useViewState";
+import useJsonPlaceHolderService from "../../services/jsonPlaceHolderService/useJsonPlaceHolderService";
 
 const useJsonPlaceHolderController = () => {
-    const {apiClient,services} = useDeps();
-    const {getPostById, createPost} = services.jsonPlaceHolderService(apiClient);
+    const {getPostById, createPost} = useJsonPlaceHolderService();
     const [viewState, setLoading, setData, setError] = useViewState();
     useEffect(() => {
         onGetPost();
