@@ -1,4 +1,3 @@
-import {useDeps} from "../../shared/depContext";
 import {useEffect} from "react";
 import useViewState from "../../shared/hook/useViewState";
 import useJsonPlaceHolderService from "../../services/jsonPlaceHolderService/useJsonPlaceHolderService";
@@ -16,7 +15,7 @@ const useJsonPlaceHolderController = () => {
             const response = await getPostById(1);
             setData(response)
         } catch (e) {
-            setError(e)
+            setError('Oops something went wrong');
         }
     }
     const onCreatePost = async () => {
@@ -25,7 +24,7 @@ const useJsonPlaceHolderController = () => {
             const response = await createPost("Hello World!", "This is a new post.")
             setData(response)
         } catch (e) {
-            setError(e)
+            setError('Oops something went wrong');
         }
     }
     return {
