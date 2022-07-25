@@ -7,6 +7,8 @@ import loginService from "./services/loginService/loginService";
 import jsonPlaceHolderService from "./services/jsonPlaceHolderService/jsonPlaceHolderService";
 import ApiClientFactory from "./shared/apiClient/apiClientFactory";
 import clientInstance from "./shared/apiClient/apiClientInstanceFactory";
+import {BrowserRouter} from "react-router-dom";
+import {AuthProvider} from "./shared/hook/useAuth";
 
 //create .env file in the root of the project
 //set environment variables starting with REACT_APP_
@@ -20,7 +22,11 @@ root.render(
                 loginService, jsonPlaceHolderService
             }}
         >
-            <AppRouter/>
+            <BrowserRouter>
+                <AuthProvider>
+                    <AppRouter/>
+                </AuthProvider>
+            </BrowserRouter>
         </DepsProvider>
     </React.StrictMode>
 );
