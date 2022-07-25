@@ -15,7 +15,7 @@ const useJsonPlaceHolderController = () => {
             const response = await doGet({url: '/1'});
             setData(response);
         } catch (e) {
-            setError(e);
+            setError('Oops something went wrong');
         }
     }
     const createPost = async () => {
@@ -29,7 +29,7 @@ const useJsonPlaceHolderController = () => {
             })
             setData(response);
         } catch (e) {
-            setError(e);
+            setError('Oops something went wrong');
         }
     }
     return {
