@@ -3,7 +3,7 @@ const jsonPlaceHolderService = ({doGet, doPost}) => {
         try {
             return await doGet({url: '/' + id})
         } catch (e) {
-            throw e;
+            throw new Error(e.message);
         }
     }
     const createPost = async (title, body) => {
@@ -15,7 +15,7 @@ const jsonPlaceHolderService = ({doGet, doPost}) => {
                 }
             })
         } catch (e) {
-            throw e;
+            throw new Error(e.message);
         }
     }
     return {
