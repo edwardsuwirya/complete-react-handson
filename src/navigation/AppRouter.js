@@ -1,5 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {AuthProvider} from "../shared/hook/useAuth";
+import {Route, Routes} from "react-router-dom";
 import LoginPageView from "../features/login/LoginPageView";
 import ProtectedRoute from "./ProtectedRoute";
 import App from "../App";
@@ -10,29 +9,25 @@ import JsonPlaceHolderListView from "../features/jsonPlaceHolder/JsonPlaceHolder
 
 const AppRouter = () => {
     return (
-        <BrowserRouter>
-            <AuthProvider>
-                <Routes>
-                    <Route index element={<LoginPageView controller={useLoginPageController}/>}/>
-                    <Route element={<ProtectedRoute/>}>
-                        <Route path="main" element={<App/>}>
-                            <Route path="jsonplaceholder"
-                                   element={<JsonPlaceHolderView controller={useJsonPlaceHolderController}/>}/>
-                            <Route path="jsonplaceholderList"
-                                   element={<JsonPlaceHolderListView/>}/>
-                        </Route>
-                    </Route>
-                    <Route
-                        path="*"
-                        element={
-                            <main style={{padding: "1rem"}}>
-                                <p>Oopss... page not found</p>
-                            </main>
-                        }
-                    />
-                </Routes>
-            </AuthProvider>
-        </BrowserRouter>
+        <Routes>
+            <Route index element={<LoginPageView controller={useLoginPageController}/>}/>
+            <Route element={<ProtectedRoute/>}>
+                <Route path="main" element={<App/>}>
+                    <Route path="jsonplaceholder"
+                           element={<JsonPlaceHolderView controller={useJsonPlaceHolderController}/>}/>
+                    <Route path="jsonplaceholderList"
+                           element={<JsonPlaceHolderListView/>}/>
+                </Route>
+            </Route>
+            <Route
+                path="*"
+                element={
+                    <main style={{padding: "1rem"}}>
+                        <p>Oopss... page not found</p>
+                    </main>
+                }
+            />
+        </Routes>
     )
 }
 
