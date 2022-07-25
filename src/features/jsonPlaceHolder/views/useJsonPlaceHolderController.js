@@ -18,7 +18,7 @@ const useJsonPlaceHolderController = () => {
             const response = await getPostById(1);
             setData(response)
         } catch (e) {
-            setError(e)
+            setError('Oops something went wrong');
         }
     }
     const onCreatePost = async () => {
@@ -30,7 +30,7 @@ const useJsonPlaceHolderController = () => {
             setData(response)
             dispatch(addPost({title, body}));
         } catch (e) {
-            setError(e)
+            setError('Oops something went wrong');
         }
     }
     return {
