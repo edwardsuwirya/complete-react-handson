@@ -8,7 +8,7 @@ const loginService = ({doPost, doGet}) => {
                 }
             })
         } catch (e) {
-            throw e;
+            throw new Error(e);
         }
     }
     const doGetUser = async () => {
@@ -17,7 +17,7 @@ const loginService = ({doPost, doGet}) => {
                 url: '/protected/user'
             })
         } catch (e) {
-            throw e;
+            throw new Error(e);
         }
     }
     return {
